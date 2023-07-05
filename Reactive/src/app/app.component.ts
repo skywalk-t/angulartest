@@ -18,7 +18,7 @@ addalternativeEmail(){
   console.log(this.fb.control(''))
 }
 
-  title = 'formz';
+  title = 'reactive formz';
   constructor(private fb:FormBuilder) { }
 registration = this.fb.group({
   email:['Chinchu'],
