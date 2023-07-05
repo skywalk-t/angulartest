@@ -1,0 +1,19 @@
+<div class="main-content">
+  <h3 class="text-center">Reactive Dynamic Forms</h3>
+  <form action="" [formGroup]="registration" (ngSubmit)="onSubmit(registration)">
+<label class="fw-bold">Email</label>
+<input type="text" class="form-control" formControlName="email">
+<div>
+  <button type="button" class="btn btn-primary" (click)="addalternativeEmail()">Add</button>
+</div>
+
+<div formArrayName="alternativeEmails" *ngFor= "let item of alternativeEmails.controls;let i= index">
+<label>Alternative Email {{i+1}}</label>
+<input type="text" [formControlName]="i" class="form-control">
+</div>
+
+<div>
+    <button type="submit" class="btn btn-success">submit</button>
+</div>
+  </form>
+</div>
