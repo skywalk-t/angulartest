@@ -1,0 +1,15 @@
+h2{
+    color: aqua;
+    text-shadow: 5px greenyellow;
+}
+div{
+    text-align: left;
+}
+label{
+    text-align: left;
+    font-weight:bold;
+    color: blue;
+}
+input{
+    border: 2px solid black;
+}

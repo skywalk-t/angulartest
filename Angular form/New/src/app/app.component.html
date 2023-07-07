@@ -1,0 +1,29 @@
+<div class="container">
+  <h2 class="bg-secondary text-center fst-italic "> User Registration</h2>
+<div>
+<form [formGroup]="registration">
+  <div>
+ <label for="firstname">First Name</label><br>
+<input  type="text" class="form-control shadow p-1 bg-body-tertiary rounded" placeholder="Enter firstname" formControlName="firstname" (ngSubmit)="onsubmit()" >
+</div>
+<pre></pre>
+<div>
+  <label for="lastname">Last Name</label><br>
+ <input type="text" class="form-control shadow p-1 bg-body-tertiary rounded" placeholder="Enter lastname" >
+ </div>
+ <pre></pre>
+ <div>
+  <label for="email">Email</label><br>
+ <input type="email" class="form-control shadow p-1 bg-body-tertiary rounded" placeholder="Enter Email id" >
+ </div>
+ <pre></pre>
+ <div>
+  <label for="password">Password</label><br>
+ <input type="password" class="form-control shadow p-1 bg-body-tertiary rounded" placeholder="Enter your password" >
+ </div>
+ <pre></pre>
+<button type="submit" class="btn btn-warning ">Submit</button>
+
+</form>
+</div>
+</div>
