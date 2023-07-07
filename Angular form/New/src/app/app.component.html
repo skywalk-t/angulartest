@@ -1,29 +1,81 @@
 <div class="container">
   <h2 class="bg-secondary text-center fst-italic "> User Registration</h2>
 <div>
-<form [formGroup]="registration">
+<form [formGroup]="registration" (ngSubmit)="onsubmit()">
+
   <div>
  <label for="firstname">First Name</label><br>
-<input  type="text" class="form-control shadow p-1 bg-body-tertiary rounded" placeholder="Enter firstname" formControlName="firstname" (ngSubmit)="onsubmit()" >
+<input  type="text" class="form-control shadow p-1 bg-body-tertiary rounded" placeholder="Enter firstname" formControlName="firstname" [ngClass]="{'is-invalid':submit&&f.firstname.errors}" >
+<div *ngIf="submit&&f.firstname.errors">
+  <div class="text-danger"*ngIf="submit&&f.firstname.errors['required']">Firstname is required</div>
+</div>
+
 </div>
 <pre></pre>
+
 <div>
   <label for="lastname">Last Name</label><br>
- <input type="text" class="form-control shadow p-1 bg-body-tertiary rounded" placeholder="Enter lastname" >
- </div>
+ <input type="text" class="form-control shadow p-1 bg-body-tertiary rounded" placeholder="Enter lastname" formControlName="lastname" [ngClass]="{'is-invalid':submit&&f.lastname.errors}">
+ <div *ngIf="submit&&f.lastname.errors" class="invalid-feedback">
+  <div class="text-danger"*ngIf="submit&&f.lastname.errors['required']">Lastname is required</div>
+</div>
+</div>
  <pre></pre>
+
  <div>
   <label for="email">Email</label><br>
- <input type="email" class="form-control shadow p-1 bg-body-tertiary rounded" placeholder="Enter Email id" >
- </div>
+ <input type="email" class="form-control shadow p-1 bg-body-tertiary rounded" placeholder="Enter Email id" formControlName="email" [ngClass]="{'is-invalid':submit&&f.email.errors}">
+<div *ngIf="submit&&f.email.errors">
+  <div class="text-danger"*ngIf="submit&&f.email.errors['required']">Email id is required</div>
+  <div class="text-danger"*ngIf="submit&&f.email.errors['email']">Email id is required</div>
+</div>
+</div>
  <pre></pre>
+
  <div>
   <label for="password">Password</label><br>
- <input type="password" class="form-control shadow p-1 bg-body-tertiary rounded" placeholder="Enter your password" >
- </div>
+ <input type="password" class="form-control shadow p-1 bg-body-tertiary rounded" placeholder="Enter your password"formControlName="password" [ngClass]="{'is-invalid':submit&&f.password.errors}">
+ <div *ngIf="submit&&f.password.errors" >
+  <div class="text-danger"*ngIf="submit&&f.password.errors['required']">Password is required</div>
+  <div class="text-danger"*ngIf="submit&&f.password.errors['pattern']">Incurrect password</div>
+</div>
+</div>
  <pre></pre>
-<button type="submit" class="btn btn-warning ">Submit</button>
+
+<button type="submit" class="btn btn-warning ">Submit</button><br>
+<pre></pre>
+
 
 </form>
+<br><br><br><br>
+
+<div id="spinner" >
+
+<div class="spinner-grow text-primary spinner-grow-sm spinner-border-animation " role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="spinner-grow text-secondary spinner-grow-sm" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="spinner-grow text-success spinner-grow-sm" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="spinner-grow text-warning spinner-grow-sm" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="spinner-grow text-info spinner-grow-sm" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="spinner-grow text-info spinner-grow-sm" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="spinner-grow text-danger spinner-grow-sm" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="spinner-grow text-dark spinner-grow-sm" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+
+</div>
 </div>
 </div>
