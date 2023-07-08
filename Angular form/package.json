@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "ngx-captcha": "^13.0.0"
+  }
+}

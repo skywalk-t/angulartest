@@ -37,7 +37,7 @@
  <input type="password" class="form-control shadow p-1 bg-body-tertiary rounded" placeholder="Enter your password"formControlName="password" [ngClass]="{'is-invalid':submit&&f.password.errors}">
  <div *ngIf="submit&&f.password.errors" >
   <div class="text-danger"*ngIf="submit&&f.password.errors['required']">Password is required</div>
-  <div class="text-danger"*ngIf="submit&&f.password.errors['pattern']">Incurrect password</div>
+  <div class="text-danger"*ngIf="submit&&f.password.errors['pattern']">at least one lowercase char - at least one uppercase char - at least one number </div>
 </div>
 </div>
  <pre></pre>

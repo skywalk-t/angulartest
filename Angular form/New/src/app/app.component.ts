@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormBuilder, Validators} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,7 +7,8 @@ import { FormBuilder, Validators} from '@angular/forms';
 })
 export class AppComponent {
   title = 'New';
-   
+  protected aFormGroup: FormGroup; 
+
 submit=false
 
 
@@ -17,11 +18,13 @@ get f() {
 
   constructor(private fb:FormBuilder) { }
   
+  
   registration=this.fb.group({
     firstname: ['',Validators.required],
     lastname:['',Validators.required],
     email:['',[Validators.required,Validators.email]],
-    password:['',[Validators.required,Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')
+    password:['',[Validators.required,Validators.pattern('((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,30})')
+  
   ]]
   })
 
@@ -31,4 +34,9 @@ onsubmit() {
   this.submit=true
 }
 
+ngOnInit() {
+  this.aFormGroup = this.fb.group({
+    recaptcha: ['', Validators.required]
+  });
+}
 }
