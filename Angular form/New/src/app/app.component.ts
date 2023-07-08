@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 })
 export class AppComponent {
   title = 'New';
-  protected aFormGroup: FormGroup; 
+  protected aFormGroup: FormGroup=null;
 
 submit=false
 
