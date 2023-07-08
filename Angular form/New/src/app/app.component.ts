@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
+import { FormBuilder, Validators} from '@angular/forms';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,8 +7,7 @@ import { FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 })
 export class AppComponent {
   title = 'New';
-  protected aFormGroup: FormGroup=null;
-
+  
 submit=false
 
 
@@ -34,9 +33,4 @@ onsubmit() {
   this.submit=true
 }
 
-ngOnInit() {
-  this.aFormGroup = this.fb.group({
-    recaptcha: ['', Validators.required]
-  });
-}
 }
