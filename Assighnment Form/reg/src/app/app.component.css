@@ -1,0 +1,24 @@
+.name{
+    display: flex; 
+  flex-direction: row;
+
+}
+.phonemail{
+    display: flex; 
+    flex-direction: row;
+    padding-bottom: 10px;
+  
+}
+#first,#last{
+    padding-left: 230px;
+}
+#ph,#em{
+    padding-left: 230px;
+}
+h4{
+    padding-bottom: 30px;
+    background-color: bisque;
+}
+.container{
+    background-color: bisque;
+}
