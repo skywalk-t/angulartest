@@ -7,7 +7,9 @@ import { FormBuilder,FormArray, Validators} from '@angular/forms';
 })
 export class AppComponent {
   title = 'reg';
-  public isChecked = true;
+ 
+
+  constructor (private fb:FormBuilder) { }
 
   get f() { 
     return this.register.controls
@@ -20,7 +22,7 @@ export class AppComponent {
     return this.register.get('alternativeEmails') as FormArray
   }
 
-  constructor (private fb:FormBuilder) { }
+  
 
 register=this.fb.group({
   firstname:['',Validators.required],

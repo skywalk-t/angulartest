@@ -44,7 +44,7 @@
      <input  type="email" class="form-control shadow p-1 bg-success-subtle" placeholder="Enter Email id" formControlName="email">
      <div>
       <button type="button" class="btn btn-success" (click)="addalternativeEmail()">Add</button>
-         <div formArrayName="addalternativeEmails" *ngFor="let item of alternativeEmails.controls; let i=index">
+         <div formArrayName="alternativeEmails" *ngFor="let item of alternativeEmails.controls; let i=index">
              <label >Alternative Email {{i+1}}</label>
              <input type="text" class="form-control shadow p-1 bg-success-subtle" [formControlName]="i">
          </div>
