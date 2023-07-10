@@ -16,7 +16,6 @@ export class AppComponent {
   }
 
 
-
   submit=false
   get alternativeEmails(){
     return this.register.get('alternativeEmails') as FormArray
@@ -31,7 +30,6 @@ register=this.fb.group({
   email:['',[Validators.required,Validators.email]],
   address:['',Validators.required],
   about:['',Validators.required],
-
 alternativeEmails:this.fb.array([])
 })
  

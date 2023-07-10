@@ -18,7 +18,7 @@
 
      <div id="last">
       <label class=" text-primary fw-bold" for="lastname">Last Name</label><br>
-     <input  type="text" class="form-control shadow p-1 bg-success-subtle" placeholder="Enter Lastname" formControlName="lastname" >
+     <input  type="text" class="form-control shadow p-1 bg-success-subtle" placeholder="Enter Lastname" formControlName="lastname" [ngClass]="{'is-invalid':submit&&f.lastname.errors}">
      <div *ngIf="submit&&f.lastname.errors" class="invalid-feedback">
       <div *ngIf="f.lastname.errors['required']">Lastname is required</div>
    </div>  
@@ -31,7 +31,7 @@
     <div id="ph">
 
       <label class=" text-primary fw-bold" for="phone">Phone no</label><br>
-     <input  type="number" class="form-control shadow p-1 bg-success-subtle" placeholder="Enter Phone no" formControlName="phone" >
+     <input  type="number" class="form-control shadow p-1 bg-success-subtle" placeholder="Enter Phone no" formControlName="phone" [ngClass]="{'is-invalid':submit&&f.phone.errors}" >
      <div *ngIf="submit&&f.phone.errors" class="invalid-feedback">
       <div *ngIf="f.phone.errors['required']">Phone number is required</div>
       <div *ngIf="f.phone.errors['pattern']">Invalid phone number</div>
@@ -41,7 +41,7 @@
     <div id="em">
 
       <label class=" text-primary fw-bold" for="email">Email Address</label><br>
-     <input  type="email" class="form-control shadow p-1 bg-success-subtle" placeholder="Enter Email id" formControlName="email">
+     <input  type="email" class="form-control shadow p-1 bg-success-subtle" placeholder="Enter Email id" formControlName="email" [ngClass]="{'is-invalid':submit&&f.email.errors}">
      <div>
       <button type="button" class="btn btn-success" (click)="addalternativeEmail()">Add</button>
          <div formArrayName="alternativeEmails" *ngFor="let item of alternativeEmails.controls; let i=index">
@@ -71,22 +71,30 @@
 
 
     <div>
-      <label class=" text-primary fw-bold form-check" for="Address">Primary Address</label><br>
-     <textarea name="adress" id="adress" cols="25" rows="8" class="form-control shadow p-1 bg-success-subtle" formControlName="address"></textarea>
+      <label class=" text-primary fw-bold form-check" for="Address">Permenant Address</label><br>
+     <textarea name="address" id="adress" cols="25" rows="8" class="form-control shadow p-1 bg-success-subtle" formControlName="address" [ngClass]="{'is-invalid':submit&&f.address.errors}"></textarea>
 
      <div *ngIf="submit&&f.address.errors" class="invalid-feedback">
       <div *ngIf="f.address.errors['required']">Address is required</div>
     </div>
 
-    
+    <div>
+      <p class="text-primary fw-bold">If ur address is same as above click "Yes" otherwise  click "No"</p>
+      <label>Yes</label>
+      <input class="form-check-input" type="checkbox" value="address">
+      </div>
+      <div>
+        <label>No</label>
+        <input class="form-check-input" type="checkbox">
+        </div>
     
       <label class=" text-primary fw-bold" for="Address">Temporary Address</label><br>
-     <textarea name="adress" id="adress" cols="20" rows="8" class="form-control shadow p-1 bg-success-subtle"></textarea>
+     <textarea name="address" id="address" cols="20" rows="8" class="form-control shadow p-1 bg-success-subtle"></textarea>>
     </div>
     
     <div>
       <label class=" text-primary fw-bold" for="about">About Me</label><br>
-     <textarea name="about" id="adress" cols="20" rows="5" placeholder="Write about yourself" class="form-control shadow p-1 --bs-primary-bg-subtle" formControlName="about"></textarea>
+     <textarea name="about" id="address" cols="20" rows="5" placeholder="Write about yourself" class="form-control shadow p-1 --bs-primary-bg-subtle" formControlName="about" [ngClass]="{'is-invalid':submit&&f.about.errors}"></textarea>
     </div>
 
 <button type="submit" class="btn btn-primary">Submit</button>
