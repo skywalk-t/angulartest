@@ -21,7 +21,6 @@ export class AppComponent {
     return this.register.get('alternativeEmails') as FormArray
   }
 
-  
 
 register=this.fb.group({
   firstname:['',Validators.required],
