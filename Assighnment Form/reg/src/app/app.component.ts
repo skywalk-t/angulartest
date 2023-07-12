@@ -11,6 +11,9 @@ export class AppComponent {
 
   constructor (private fb:FormBuilder) { }
 
+
+
+
   get f() { 
     return this.register.controls
   }
@@ -42,6 +45,7 @@ onsubmit(values:any){
   console.log(values.value)
   this.submit=true
   console.log('clicked')
+  
 
 }
 

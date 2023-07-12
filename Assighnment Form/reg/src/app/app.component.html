@@ -42,16 +42,19 @@
 
       <label class=" text-primary fw-bold" for="email">Email Address</label><br>
      <input  type="email" class="form-control shadow p-1 bg-success-subtle" placeholder="Enter Email id" formControlName="email" [ngClass]="{'is-invalid':submit&&f.email.errors}">
+    
+     <div *ngIf="submit&&f.email.errors" class="invalid-feedback">
+      <div *ngIf="f.email.errors['required']">Email id is required</div>
+      <div *ngIf="f.email.errors['email']">Invalid Email address</div>
+   </div>
+    
      <div>
       <button type="button" class="btn btn-success" (click)="addalternativeEmail()">Add</button>
          <div formArrayName="alternativeEmails" *ngFor="let item of alternativeEmails.controls; let i=index">
              <label >Alternative Email {{i+1}}</label>
              <input type="text" class="form-control shadow p-1 bg-success-subtle" [formControlName]="i">
          </div>
-         <div *ngIf="submit&&f.email.errors" class="invalid-feedback">
-          <div *ngIf="f.email.errors['required']">Email id is required</div>
-          <div *ngIf="f.email.errors['email']">Invalid Email address</div>
-       </div>
+        
      </div>
     </div>
     
@@ -88,6 +91,9 @@
     <div>
       <label class=" text-primary fw-bold" for="about">About Me</label><br>
      <textarea name="about" id="address" cols="20" rows="5" placeholder="Write about yourself" class="form-control shadow p-1 --bs-primary-bg-subtle" formControlName="about" [ngClass]="{'is-invalid':submit&&f.about.errors}"></textarea>
+     <div *ngIf="submit&&f.about.errors" class="invalid-feedback">
+      <div *ngIf="f.about.errors['required']">About you is required</div>
+      </div>
     </div>
 
 <button type="submit" class="btn btn-primary">Submit</button>
