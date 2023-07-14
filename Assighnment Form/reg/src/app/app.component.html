@@ -75,17 +75,17 @@
 
     <div>
       <label class=" text-primary fw-bold form-check" for="Address">Permenant Address</label><br>
-     <textarea name="address" id="adress" cols="25" rows="8" class="form-control shadow p-1 bg-success-subtle" formControlName="address" [ngClass]="{'is-invalid':submit&&f.address.errors}"></textarea>
+     <textarea name="address" id="adress" cols="25" rows="8" class="form-control shadow p-1 bg-success-subtle" formControlName="permanant" [ngClass]="{'is-invalid':submit&&f.address.errors}"></textarea>
 
      <div *ngIf="submit&&f.address.errors" class="invalid-feedback">
       <div *ngIf="f.address.errors['required']">Address is required</div>
     </div>
 
     <div>
-      <input class="form-check-input" type="checkbox" value="address">
+      <input (change)="fieldsChange($event)" value="angular" type="checkbox"/>
       </div>
       <label class=" text-primary fw-bold" for="Address">Temporary Address</label><br>
-     <textarea name="address" id="address" cols="20" rows="8" class="form-control shadow p-1 bg-success-subtle"></textarea>
+     <textarea name="address" id="address" cols="20" rows="8" class="form-control shadow p-1 bg-success-subtle"></textarea formControlName="temporary">
     </div>
     
     <div>

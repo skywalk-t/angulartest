@@ -15,7 +15,7 @@ export class AppComponent {
 
 
   get f() { 
-    return this.register.controls
+    return this.register.controls; 
   }
 
 
@@ -45,8 +45,12 @@ onsubmit(values:any){
   console.log(values.value)
   this.submit=true
   console.log('clicked')
-  
 
+}
+
+fieldsChange(values:any):void {
+  console.log(values.currentTarget.checked);
+  this.fieldsChange.controls['dept'].setValue(selected.id);
 }
 
 }
