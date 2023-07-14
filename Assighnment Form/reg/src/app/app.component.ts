@@ -31,6 +31,7 @@ register=this.fb.group({
   phone:['',[Validators.required,Validators.pattern('((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,30})')]], 
   email:['',[Validators.required,Validators.email]],
   address:['',Validators.required],
+  temporary:['',Validators.required],
   about:['',Validators.required],
 alternativeEmails:this.fb.array([])
 })
@@ -49,8 +50,9 @@ onsubmit(values:any){
 }
 
 fieldsChange(values:any):void {
+  debugger
   console.log(values.currentTarget.checked);
-  this.fieldsChange.controls['dept'].setValue(selected.id);
+  this.register.controls['temporary'].setValue(this.register.controls['address'].value);
 }
 
 }
