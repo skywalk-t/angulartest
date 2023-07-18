@@ -7,14 +7,8 @@ import { Component } from '@angular/core';
 })
 export class TemplateDrivenFormComponent {
 
-onSubmit(form:NgForm){
-  console.log(form);
 
 }
 
 
 
-
-
-
-}

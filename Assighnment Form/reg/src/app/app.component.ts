@@ -46,11 +46,11 @@ onsubmit(values:any){
   console.log(values.value)
   this.submit=true
   console.log('clicked')
+  
 
 }
-
+//to check checkbox is true or false,when its true and show the result in temporary address
 fieldsChange(values:any):void {
-  debugger
   console.log(values.currentTarget.checked);
   this.register.controls['temporary'].setValue(this.register.controls['address'].value);
 }
