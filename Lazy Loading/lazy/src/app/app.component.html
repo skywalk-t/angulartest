@@ -1,15 +1,1 @@
-<form onsubmit="takevalue()">
-    <input type="text" name="Name" placeholder="Your name" id="name"><br><br>
-    <input type="email" name="email" placeholder="Your email id" id="email"><br><br>
-    <input type="number" name="phone" placeholder="Your phone numbr" id="phone"><br><br>
-    <input type="password"name="password" placeholder="Your password" id="password"><br><br>
-    <button type="submit">signup</button>
-</form>
-
-<script>
-    function takevalue() {
-        var name = document.getElementById("name").value;
-        document.write("your name is= " + name); 
-        console.log(name);
-    }
-</script>
+<router-outlet></router-outlet>
