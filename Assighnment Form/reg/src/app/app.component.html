@@ -1,3 +1,4 @@
+
 <div class="container-fluid ">
   <h1 class="bg-secondary  text-center text-white ">Registration Form</h1>
   <h4 class="text text-center">Fill out the form carefully for registration</h4>
@@ -53,7 +54,7 @@
           </div>
 
           <div>
-            <button type="button" class="btn btn-success" (click)="addalternativeEmail()">Add</button>
+            <button type="button" class="btn btn-success" (click)="addalternativeEmail()" [routerLink]="['/Home']">Add</button>
             <div formArrayName="alternativeEmails" *ngFor="let item of alternativeEmails.controls; let i=index">
               <label>Alternative Email {{i+1}}</label>
               <input type="text" class="form-control shadow p-1 bg-success-subtle" [formControlName]="i">
@@ -112,3 +113,4 @@
   </div>
 
 </div>
+<router-outlet></router-outlet>
