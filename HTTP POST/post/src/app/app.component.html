@@ -1,0 +1,20 @@
+<h2 class="text-center text-success text-decoration-underline">HTTP POST</h2>
+
+<form class="container" (ngSubmit)="onsubmit()">
+    <label for="">First Name:</label>
+    <input type="text" name="firstname" class="form-control" [(ngModel)]="data.firstname">
+
+    <label for="">Last Name:</label>
+    <input type="text" name="lasttname" class="form-control" [(ngModel)]="data.lastname">
+
+    <label for="">Age:</label>
+    <input type="number" name="age" class="form-control" [(ngModel)]="data.age">
+
+    <label for="">Salary:</label>
+    <input type="number" name="salary" class="form-control" [(ngModel)]="data.salary">
+
+    <br>
+    <button type="submit" class="btn btn-info">Submit</button>
+
+</form>
+<router-outlet></router-outlet>
